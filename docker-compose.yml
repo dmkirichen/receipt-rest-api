@@ -1,0 +1,15 @@
+version: "3s"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    expose:
+      - 5433
+    environment:
+      -
